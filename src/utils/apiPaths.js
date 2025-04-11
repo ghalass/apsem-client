@@ -21,6 +21,13 @@ export const API_PATHS = {
         DELETE_SITE: (siteId) => `/sites/${siteId}`,
         DOWNLOAD_SITES: "/sites/downloadexcel",
     },
+    OBJECTIFS: {
+        GET_ALL_OBJECTIFS: "/objectifs",
+        ADD_OBJECTIF: "/objectifs",
+        UPDATE_OBJECTIF: (objectifId) => `/objectifs/${objectifId}`,
+        DELETE_OBJECTIF: (objectifId) => `/objectifs/${objectifId}`,
+        DOWNLOAD_OBJECTIFS: "/objectifs/downloadexcel",
+    },
     TYPEPARCS: {
         GET_ALL_TYPEPARCS: "/typeparcs",
         ADD_TYPEPARC: "/typeparcs",
