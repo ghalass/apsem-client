@@ -127,25 +127,25 @@ const EtatMensuel = () => {
             <CTableDataCell colSpan={2}>HIM </CTableDataCell>
 
             <CTableDataCell colSpan={2} className={`bg-secondary-subtle`}>
-              NI{' '}
+              NI
             </CTableDataCell>
 
             <CTableDataCell colSpan={2}>HRD </CTableDataCell>
 
             <CTableDataCell colSpan={2} className={`bg-secondary-subtle`}>
-              MTTR{' '}
+              MTTR
             </CTableDataCell>
 
-            <CTableDataCell colSpan={2}>DISP </CTableDataCell>
+            <CTableDataCell colSpan={3}>DISP </CTableDataCell>
 
-            <CTableDataCell colSpan={2} className={`bg-secondary-subtle`}>
-              TDM{' '}
+            <CTableDataCell colSpan={3} className={`bg-secondary-subtle`}>
+              TDM
             </CTableDataCell>
 
-            <CTableDataCell colSpan={2}>MTBF </CTableDataCell>
+            <CTableDataCell colSpan={3}>MTBF </CTableDataCell>
 
             <CTableDataCell colSpan={2} className={`bg-secondary-subtle`}>
-              UTIL{' '}
+              UTIL
             </CTableDataCell>
           </CTableRow>
           <CTableRow>
@@ -173,12 +173,15 @@ const EtatMensuel = () => {
 
             <CTableDataCell>M</CTableDataCell>
             <CTableDataCell>A</CTableDataCell>
+            <CTableDataCell>Obj</CTableDataCell>
 
             <CTableDataCell className={`bg-secondary-subtle`}>M</CTableDataCell>
             <CTableDataCell className={`bg-secondary-subtle`}>A</CTableDataCell>
+            <CTableDataCell className={`bg-secondary-subtle`}>Obj</CTableDataCell>
 
             <CTableDataCell>M</CTableDataCell>
             <CTableDataCell>A</CTableDataCell>
+            <CTableDataCell>Obj</CTableDataCell>
 
             <CTableDataCell className={`bg-secondary-subtle`}>M</CTableDataCell>
             <CTableDataCell className={`bg-secondary-subtle`}>A</CTableDataCell>
@@ -212,12 +215,17 @@ const EtatMensuel = () => {
 
                 <CTableDataCell>{item?.dispo_m}</CTableDataCell>
                 <CTableDataCell>{item?.dispo_a}</CTableDataCell>
+                <CTableDataCell>{item?.objectif_dispo}</CTableDataCell>
 
                 <CTableDataCell className={`bg-secondary-subtle`}>{item?.tdm_m}</CTableDataCell>
                 <CTableDataCell className={`bg-secondary-subtle`}>{item?.tdm_a}</CTableDataCell>
+                <CTableDataCell className={`bg-secondary-subtle`}>
+                  {item?.objectif_tdm}
+                </CTableDataCell>
 
                 <CTableDataCell>{item?.mtbf_m}</CTableDataCell>
                 <CTableDataCell>{item?.mtbf_a}</CTableDataCell>
+                <CTableDataCell>{item?.objectif_mtbf}</CTableDataCell>
 
                 <CTableDataCell className={`bg-secondary-subtle`}>{item?.util_m}</CTableDataCell>
                 <CTableDataCell className={`bg-secondary-subtle`}>{item?.util_a}</CTableDataCell>
