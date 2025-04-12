@@ -228,9 +228,11 @@ const Objectifs = () => {
                 <CTableDataCell>{item?.Site?.name}</CTableDataCell>
                 <CTableDataCell>{item?.dispo}</CTableDataCell>
                 <CTableDataCell>{item?.mtbf}</CTableDataCell>
-                <CTableDataCell className="text-center border-start"> {item?.tdm}</CTableDataCell>
+                <CTableDataCell> {item?.tdm}</CTableDataCell>
 
-                <CTableDataCell>{item?.spe_huile}</CTableDataCell>
+                <CTableDataCell className="text-center border-start">
+                  {item?.spe_huile}
+                </CTableDataCell>
 
                 <CTableDataCell> {item?.spe_go}</CTableDataCell>
 
