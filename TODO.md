@@ -5,7 +5,7 @@
   [] Prévoir déclenchement des RG - VP en prévoyant un lien aux kits RG nécessaires
   [] Un suivi des analyses d'huile
   [x] En fin faire essai d'impression pour vérifier l'état de sortie
-  [] ajouter site au rje
+  [x] ajouter site au rje
 
 - DEINA
   [x] avoir le suivi de consommation des huiles par cause (ou code) de consommation comme l'exemple ci-joint

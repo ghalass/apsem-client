@@ -25,8 +25,11 @@ const RapportRje = () => {
 
   // filter data
   const [searchByEngin, setSearchByEngin] = useState('')
-  const filteredData = generateRjeQuery?.data?.filter((item) =>
-    item.engin?.toLowerCase().includes(searchByEngin.toLowerCase()),
+  const [searchBySite, setSearchBySite] = useState('')
+  const filteredData = generateRjeQuery?.data?.filter(
+    (item) =>
+      item.engin?.toLowerCase().includes(searchByEngin.toLowerCase()) ||
+      item.siteName?.toLowerCase().includes(searchBySite.toLowerCase()),
   )
 
   return (
@@ -76,14 +79,25 @@ const RapportRje = () => {
       </div>
 
       <div className="mb-2">
-        <input
-          style={{ maxWidth: '200px' }}
-          type="search"
-          className="form-control form-control-sm"
-          placeholder="Engin..."
-          value={searchByEngin}
-          onChange={(e) => setSearchByEngin(e.target.value)}
-        />
+        <div className="d-flex gap-2">
+          <input
+            style={{ maxWidth: '200px' }}
+            type="search"
+            className="form-control form-control-sm"
+            placeholder="Engin..."
+            value={searchByEngin}
+            onChange={(e) => setSearchByEngin(e.target.value)}
+          />
+
+          <input
+            style={{ maxWidth: '200px' }}
+            type="search"
+            className="form-control form-control-sm"
+            placeholder="Site..."
+            value={searchBySite}
+            onChange={(e) => setSearchBySite(e.target.value)}
+          />
+        </div>
       </div>
 
       <CTable
