@@ -100,48 +100,111 @@ const RapportRje = () => {
               Rapport Journalier Engins RJE du {date.split('-').reverse().join('-')}
             </CTableHeaderCell>
           </CTableRow>
-          <CTableRow>
-            <CTableHeaderCell></CTableHeaderCell>
 
-            <CTableHeaderCell className="text-center" colSpan={7}>
+          <CTableRow>
+            <CTableHeaderCell colSpan={2}></CTableHeaderCell>
+
+            <CTableHeaderCell className="text-center border-start" colSpan={10}>
               JOURNALIER
             </CTableHeaderCell>
 
-            <CTableHeaderCell className="text-center bg-secondary-subtle" colSpan={7}>
+            <CTableHeaderCell className="text-center bg-secondary-subtle" colSpan={10}>
               MENSUEL
             </CTableHeaderCell>
 
-            <CTableHeaderCell className="text-center" colSpan={7}>
+            <CTableHeaderCell className="text-center" colSpan={10}>
               ANNUEL
             </CTableHeaderCell>
           </CTableRow>
 
           <CTableRow>
-            <CTableHeaderCell>Engin</CTableHeaderCell>
+            <CTableHeaderCell colSpan={2}></CTableHeaderCell>
 
-            <CTableHeaderCell>NHO</CTableHeaderCell>
+            {/* JOURNALIER */}
+            <CTableHeaderCell className="text-center border" colSpan={4}></CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              DISP
+            </CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              MTBF
+            </CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              TDM
+            </CTableHeaderCell>
+
+            {/* MENSUEL */}
+            <CTableHeaderCell className="text-center" colSpan={4}></CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              DISP
+            </CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              MTBF
+            </CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              TDM
+            </CTableHeaderCell>
+
+            {/* ANNUEL */}
+            <CTableHeaderCell className="text-center" colSpan={4}></CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              DISP
+            </CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              MTBF
+            </CTableHeaderCell>
+            <CTableHeaderCell className="text-center border" colSpan={2}>
+              TDM
+            </CTableHeaderCell>
+          </CTableRow>
+
+          <CTableRow>
+            <CTableHeaderCell>Engin</CTableHeaderCell>
+            <CTableHeaderCell>Site</CTableHeaderCell>
+
+            {/* JOURNALIER */}
+            <CTableHeaderCell className="border-start">NHO</CTableHeaderCell>
             <CTableHeaderCell>HRM</CTableHeaderCell>
             <CTableHeaderCell>HIM</CTableHeaderCell>
             <CTableHeaderCell>NI</CTableHeaderCell>
-            <CTableHeaderCell>DISP</CTableHeaderCell>
-            <CTableHeaderCell>MTBF</CTableHeaderCell>
-            <CTableHeaderCell>TDM</CTableHeaderCell>
 
+            <CTableHeaderCell className="text-center border-start">réal</CTableHeaderCell>
+            <CTableHeaderCell>OBJ</CTableHeaderCell>
+
+            <CTableHeaderCell className="text-center border-start">réal</CTableHeaderCell>
+            <CTableHeaderCell>OBJ</CTableHeaderCell>
+
+            <CTableHeaderCell className="text-center border-start">réal</CTableHeaderCell>
+            <CTableHeaderCell>OBJ</CTableHeaderCell>
+
+            {/* MENSUEL */}
             <CTableHeaderCell className="bg-secondary-subtle">NHO</CTableHeaderCell>
             <CTableHeaderCell className="bg-secondary-subtle">HRM</CTableHeaderCell>
             <CTableHeaderCell className="bg-secondary-subtle">HIM</CTableHeaderCell>
             <CTableHeaderCell className="bg-secondary-subtle">NI</CTableHeaderCell>
-            <CTableHeaderCell className="bg-secondary-subtle">DISP</CTableHeaderCell>
-            <CTableHeaderCell className="bg-secondary-subtle">MTBF</CTableHeaderCell>
-            <CTableHeaderCell className="bg-secondary-subtle">TDM</CTableHeaderCell>
 
-            <CTableHeaderCell>NHO</CTableHeaderCell>
+            <CTableHeaderCell className="bg-secondary-subtle">réal</CTableHeaderCell>
+            <CTableHeaderCell className="bg-secondary-subtle">Obj</CTableHeaderCell>
+
+            <CTableHeaderCell className="bg-secondary-subtle">réal</CTableHeaderCell>
+            <CTableHeaderCell className="bg-secondary-subtle">Obj</CTableHeaderCell>
+
+            <CTableHeaderCell className="bg-secondary-subtle">TDM</CTableHeaderCell>
+            <CTableHeaderCell className="bg-secondary-subtle">Obj</CTableHeaderCell>
+
+            {/* ANNUEL */}
+            <CTableHeaderCell className="border-start">NHO</CTableHeaderCell>
             <CTableHeaderCell>HRM</CTableHeaderCell>
             <CTableHeaderCell>HIM</CTableHeaderCell>
             <CTableHeaderCell>NI</CTableHeaderCell>
-            <CTableHeaderCell>DISP</CTableHeaderCell>
-            <CTableHeaderCell>MTBF</CTableHeaderCell>
-            <CTableHeaderCell>TDM</CTableHeaderCell>
+
+            <CTableHeaderCell className="text-center border-start">réal</CTableHeaderCell>
+            <CTableHeaderCell>OBJ</CTableHeaderCell>
+
+            <CTableHeaderCell className="text-center border-start">réal</CTableHeaderCell>
+            <CTableHeaderCell>OBJ</CTableHeaderCell>
+
+            <CTableHeaderCell className="text-center border-start">réal</CTableHeaderCell>
+            <CTableHeaderCell>OBJ</CTableHeaderCell>
           </CTableRow>
         </CTableHead>
         <CTableBody className="text-end">
@@ -149,30 +212,49 @@ const RapportRje = () => {
             filteredData?.map((r, i) => (
               <CTableRow key={i}>
                 <CTableDataCell>{r?.engin}</CTableDataCell>
+                <CTableDataCell>{r?.siteName}</CTableDataCell>
 
-                <CTableDataCell>{r?.nho_j}</CTableDataCell>
+                <CTableDataCell className="border-start">{r?.nho_j}</CTableDataCell>
                 <CTableDataCell>{r?.hrm_j}</CTableDataCell>
                 <CTableDataCell>{r?.him_j}</CTableDataCell>
                 <CTableDataCell>{r?.ni_j}</CTableDataCell>
-                <CTableDataCell>{r?.dispo_j}</CTableDataCell>
-                <CTableDataCell>{r?.mtbf_j}</CTableDataCell>
-                <CTableDataCell>{r?.TDM_j}</CTableDataCell>
+
+                <CTableDataCell className="text-center border-start">{r?.dispo_j}</CTableDataCell>
+                <CTableDataCell>{r?.objectif_dispo}</CTableDataCell>
+
+                <CTableDataCell className="text-center border-start">{r?.mtbf_j}</CTableDataCell>
+                <CTableDataCell>{r?.objectif_mtbf}</CTableDataCell>
+
+                <CTableDataCell className="text-center border-start">{r?.tdm_j}</CTableDataCell>
+                <CTableDataCell>{r?.objectif_tdm}</CTableDataCell>
 
                 <CTableDataCell className="bg-secondary-subtle">{r?.nho_m}</CTableDataCell>
                 <CTableDataCell className="bg-secondary-subtle">{r?.hrm_m}</CTableDataCell>
                 <CTableDataCell className="bg-secondary-subtle">{r?.him_m}</CTableDataCell>
                 <CTableDataCell className="bg-secondary-subtle">{r?.ni_m}</CTableDataCell>
+
                 <CTableDataCell className="bg-secondary-subtle">{r?.dispo_m}</CTableDataCell>
+                <CTableDataCell className="bg-secondary-subtle">{r?.objectif_dispo}</CTableDataCell>
+
                 <CTableDataCell className="bg-secondary-subtle">{r?.mtbf_m}</CTableDataCell>
-                <CTableDataCell className="bg-secondary-subtle">{r?.TDM_m}</CTableDataCell>
+                <CTableDataCell className="bg-secondary-subtle">{r?.objectif_mtbf}</CTableDataCell>
+
+                <CTableDataCell className="bg-secondary-subtle">{r?.tdm_m}</CTableDataCell>
+                <CTableDataCell className="bg-secondary-subtle">{r?.objectif_tdm}</CTableDataCell>
 
                 <CTableDataCell>{r?.nho_a}</CTableDataCell>
                 <CTableDataCell>{r?.hrm_a}</CTableDataCell>
                 <CTableDataCell>{r?.him_a}</CTableDataCell>
                 <CTableDataCell>{r?.ni_a}</CTableDataCell>
+
                 <CTableDataCell>{r?.dispo_a}</CTableDataCell>
+                <CTableDataCell>{r?.objectif_dispo}</CTableDataCell>
+
                 <CTableDataCell>{r?.mtbf_a}</CTableDataCell>
-                <CTableDataCell>{r?.TDM_a}</CTableDataCell>
+                <CTableDataCell>{r?.objectif_mtbf}</CTableDataCell>
+
+                <CTableDataCell>{r?.tdm_a}</CTableDataCell>
+                <CTableDataCell>{r?.objectif_tdm}</CTableDataCell>
               </CTableRow>
             ))}
 
