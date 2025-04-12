@@ -12,9 +12,10 @@ import {
   LineChart,
   Line,
 } from 'recharts'
-const ChartCustom = ({ data, xDataKey, barDataKey, type = 'bar' }) => {
+
+const ChartCustom = ({ data, xDataKey, barDataKeys = [], type = 'bar' }) => {
   return (
-    <ResponsiveContainer width="100%" height={300} className={''}>
+    <ResponsiveContainer width="100%" height={300}>
       {type === 'bar' ? (
         <BarChart data={data} margin={{ bottom: 60 }}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -27,16 +28,17 @@ const ChartCustom = ({ data, xDataKey, barDataKey, type = 'bar' }) => {
           <YAxis />
           <Tooltip />
           <Legend verticalAlign="top" />
-          <Bar dataKey={barDataKey} fill="#8884d8">
-            {/* Ajout des valeurs sur les barres */}
-            <LabelList
-              dataKey={barDataKey}
-              position="top"
-              fill="black"
-              fontSize={12}
-              fontWeight="bold"
-            />
-          </Bar>
+          {barDataKeys.map((barDataKey, index) => (
+            <Bar key={index} dataKey={barDataKey} fill={index % 2 === 0 ? '#8884d8' : '#82ca9d'}>
+              <LabelList
+                dataKey={barDataKey}
+                position="top"
+                fill="black"
+                fontSize={12}
+                fontWeight="bold"
+              />
+            </Bar>
+          ))}
         </BarChart>
       ) : (
         <LineChart data={data} margin={{ bottom: 60, right: 60 }}>
@@ -50,16 +52,22 @@ const ChartCustom = ({ data, xDataKey, barDataKey, type = 'bar' }) => {
           <YAxis />
           <Tooltip />
           <Legend verticalAlign="top" />
-          <Line type="monotone" dataKey={barDataKey} stroke="#8884d8">
-            {/* Ajout des valeurs sur les barres */}
-            <LabelList
+          {barDataKeys.map((barDataKey, index) => (
+            <Line
+              key={index}
+              type="monotone"
               dataKey={barDataKey}
-              position="top"
-              fill="black"
-              fontSize={12}
-              fontWeight="bold"
-            />
-          </Line>
+              stroke={index % 2 === 0 ? '#8884d8' : '#82ca9d'}
+            >
+              <LabelList
+                dataKey={barDataKey}
+                position="top"
+                fill="black"
+                fontSize={12}
+                fontWeight="bold"
+              />
+            </Line>
+          ))}
         </LineChart>
       )}
     </ResponsiveContainer>

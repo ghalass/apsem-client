@@ -17,4 +17,4 @@
   [x] Analyse indipo pour un période (par parc, par engin)
   [x] Analyse performances (dispo, mtbf, util) pour un période (par parc, par engin)
   [x] données saisie par mois
-  [] rajouter les objectifs
+  [x] rajouter les objectifs

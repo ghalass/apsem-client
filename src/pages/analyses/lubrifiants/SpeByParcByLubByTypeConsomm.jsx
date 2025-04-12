@@ -218,11 +218,17 @@ const SpeByParcByLubByTypeConsomm = () => {
                 selectedParc !== '' &&
                 getAnalyse?.data &&
                 getAnalyse?.data?.length > 0 && (
+                  // <ChartCustom
+                  //   data={getAnalyse?.data}
+                  //   xDataKey={'name'}
+                  //   barDataKey={'percentage'}
+                  //   type="bar"
+                  // />
                   <ChartCustom
                     data={getAnalyse?.data}
-                    xDataKey={'name'}
-                    barDataKey={'percentage'}
-                    type="bar"
+                    xDataKey="name"
+                    barDataKeys={['percentage']} // Multiple lines or bars
+                    type="bar" // or "bar" depending on the type of chart you want
                   />
                 )}
             </div>

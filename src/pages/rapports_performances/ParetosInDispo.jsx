@@ -92,10 +92,17 @@ const ParetosInDispo = () => {
               selectedParc !== '' &&
               getParetoIndispParc?.data &&
               getParetoIndispParc?.data?.length > 0 ? (
+                // <ChartCustom
+                //   data={getParetoIndispParc?.data?.slice(0, 10)}
+                //   xDataKey={'panne'}
+                //   barDataKey={'indispo'}
+                // />
+
                 <ChartCustom
                   data={getParetoIndispParc?.data?.slice(0, 10)}
-                  xDataKey={'panne'}
-                  barDataKey={'indispo'}
+                  xDataKey="panne"
+                  barDataKeys={['indispo']} // Multiple lines or bars
+                  type="bar" // or "bar" depending on the type of chart you want
                 />
               ) : (
                 <h6 className="text-center">
@@ -150,11 +157,17 @@ const ParetosInDispo = () => {
               selectedParc !== '' &&
               getParetoMtbfParc?.data &&
               getParetoMtbfParc?.data?.length > 0 && (
+                // <ChartCustom
+                //   data={getParetoMtbfParc?.data}
+                //   xDataKey={'mois'}
+                //   barDataKey={'mtbf'}
+                //   type="line"
+                // />
                 <ChartCustom
                   data={getParetoMtbfParc?.data}
-                  xDataKey={'mois'}
-                  barDataKey={'mtbf'}
-                  type="line"
+                  xDataKey="mois"
+                  barDataKeys={['mtbf', 'objectif_mtbf']} // Multiple lines or bars
+                  type="line" // or "bar" depending on the type of chart you want
                 />
               )}
           </div>
